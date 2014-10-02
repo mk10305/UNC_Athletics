@@ -1,0 +1,207 @@
+
+.table {
+  background-color: white;
+  
+}
+
+footer {
+  background-color: white;
+  
+}
+
+body {
+  background-color: #fffcfc;
+  background-image: url("http://www.transparenttextures.com/patterns/crissxcross.png");
+  /* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
+}
+
+.extramargin {
+  margin-top: 50px;
+}
+
+ul.nav a:hover { 
+
+  background-color:#56A0D3 !important;
+
+
+}
+
+.navbar-header a {
+  font-size: 2.5em;
+}
+
+
+.navbar-header a:active{
+background-color: #56A0D3 !important;
+
+}
+
+
+.tableheader {
+  background-color: #0d1024;
+  color: white;
+}
+
+.captiontext p {
+  color: white !important;
+}
+h3, h2, h1{
+ color: #56A0D3;
+}
+
+.sports {
+  color: #0d1024;
+}
+
+
+.list-group-item {
+  background-color: rgba(0,0,0,0.9);
+  background-color: #56A0D3;
+  font-size: 1.1em;
+  border-bottom: 2px solid #0d1024;
+  border-top: none;
+
+}
+
+
+.list-group-item:last-child {
+    border-bottom: none;
+}
+
+.list-group li a {
+  color: white;
+
+}
+
+.list-group li:hover {
+  background-color:#0d1024;
+}
+
+
+
+.navbar-inner {
+background: #2b2b2b;
+background-image: none;
+background-repeat: repeat-x;
+border-color: none;
+filter: none;
+}
+
+
+.navbar-default {
+   background-image: url('/assets/carolinafever.jpg');
+   background-size: 100%;
+   background-repeat: no-repeat;
+   box-shadow: none;
+   border: none;
+   -webkit-box-shadow: none;
+   min-height: 150px;
+  
+}
+
+.navbar-nav li a, .navbar-brand {
+  color: white !important;
+  background-color: rgba(0,0,0,0.6)
+}
+
+
+
+.playertableheading {
+  background-color:black;
+  background-color: whiteb;
+  border-bottom: 20px solid #56A0D3 !important;
+
+
+}
+
+.playertablename {
+  text-align:center;
+}
+
+
+.slider {
+margin-top:10px;
+}
+
+
+#myCarousel {
+padding:5px;
+background: #428BCA;
+}
+#myCarousel .carousel-caption {
+top:auto;
+width:auto;
+right:auto;
+bottom:0px;
+left:0;
+padding:20px;
+background:rgba(0,0,0,0.65);
+text-align:center;
+height:auto;
+width:100%;
+color:#432A18;/*#FFF*/
+text-shadow:none;
+}
+#myCarousel .carousel-caption h2 {
+color:#428BCA;
+margin-top:0;
+}
+.carousel-control {
+color:#fff;
+top:44%;
+background:#428BCA;
+bottom:auto;
+padding-top:29px;
+width:36px;
+border-radius:50%;
+height:36px;
+opacity:1;
+}
+
+
+.carousel-indicators {
+bottom:15px;
+left:10px;
+width:auto;
+margin-left:0;
+}
+.carousel-indicators li {
+border-radius:0;
+width:8px;
+height:8px;
+background:#fff;
+}
+.carousel-indicators .active {
+width:10px;
+height:10px;
+background:#3276b1;
+border-color:#3276b1;
+}
+ 
+ 
+
+
+/* tab color */
+.nav-tabs>li>a {
+  background-color: #ffffff; 
+  border-color: #777777;
+  color:#56A0D3;
+}
+
+/* active tab color */
+.nav-tabs>li.active>a, .nav-tabs>li.active>a:hover, .nav-tabs>li.active>a:focus {
+  color: #fff;
+  background-color: #0d1024;;
+  border: 1px solid #888888;
+}
+
+/* hover tab color */
+.nav-tabs>li>a:hover {
+  border-color: #56A0D3;
+  background-color: #56A0D3;
+  color: white;
+}
+
+
+
+

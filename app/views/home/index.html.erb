@@ -1,0 +1,202 @@
+   <div class="col-md-10 col-sm-8">
+              <ul class="nav nav-tabs" role="tablist">
+                <li class="active"><a href="#">Top Stories</a></li>
+                <li><a href="#">More Headlines</a></li>
+                <li><a href="#">Multimedia</a></li>
+                <li><a href="#">Blog</a></li>
+              </ul>
+            </div>
+
+        <div class="col-md-8 col-md-offset-1 col-sm-7">
+              
+       <div class="slider">
+           
+
+       <div id="myCarousel" class="carousel slide">
+         <ol class="carousel-indicators">
+         <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+         <li data-target="#myCarousel" data-slide-to="1"></li>
+         <li data-target="#myCarousel" data-slide-to="2"></li>
+         </ol> 
+       <div class="carousel-inner">
+       <div class="item active">
+         <%= link_to image_tag("fieldhockeyslider.jpg",:alt => "Slide2"), {:class => "img-responsive", :alt => "UNC Field Hockey"} %>
+       <div class="carousel-caption">
+         <h2> Tarheels Release 2013 Schedule</h2>
+       </div>
+       </div>
+       <div class="item">
+         <%= link_to image_tag("swimmingslider.jpg", :alt => "Slide1"), {:class => "img-responsive", :alt => "UNC Swimming"} %>
+       <div class="carousel-caption">
+       <h2>Tarheels Beat Dook!</h2>
+       </div>
+       </div>
+       <div class="item">
+         <%= link_to image_tag("basketballslider.jpg", :alt => "Slide3"), {:class => "img-responsive", :alt => "UNC Basketball"} %>
+       <div class="carousel-caption">
+         <h2>Tarheels Finish 3rd at ACCS</h2>
+       </div>
+       </div>
+       <div class="item">
+         <%= link_to image_tag("footballslider.jpg", :alt => "Slide4"), {:class => "img-responsive", :alt => "UNC Football"} %>
+       <div class="carousel-caption">
+       <h2>UNC defeats GT 20-13</h2>
+
+       </div>
+       </div>
+       </div>
+
+
+
+       </div> 
+
+
+       </div>
+       </div>
+
+
+
+          <div class="col-md-6 col-sm-5">
+            <h2> Upcoming Events </h2>
+            <div class-"table-responsive">
+              <table class="table table-bordered">
+                <tr>
+                 <th class="tableheader" colspan="2">  Wednesday, March 13 </th>
+               </tr>
+               <tr>
+                 <td> Women's Tennis vs. Texas Tech (San Diego, Calif.) </td>
+                 <td> 10:00AM </td>
+               </tr>
+               <tr>
+                 <td> Baseball vs. High Point (Chapel Hill, N.C.) </td>
+                 <td> 6:00PM </td>
+               </tr>
+               <tr>
+                 <td> Men's Lacrosse vs. Duke (Chapel Hill, N.C. (Fetzer Field))  </td>
+                 <td> 7:30PM </td>
+               </tr>
+               <tr>
+                 <th class="tableheader" colspan="2">  Friday, March 15 </th>
+               </tr>
+               <tr>
+                 <td> Women's Golf vs. SunTrust Gator Invitational (Gainesville, Fla.)</td>
+                 <td> All Day </td>
+               </tr>
+               <tr>
+                 <td> Men's Golf vs. Seminole Intercollegiate (Tallahassee, Fla.) </td>
+                 <td> All Day </td>
+               </tr>
+               <tr>
+                 <td> Rowing vs. George Mason (Lake Lure, N.C. (Lake Lure))  </td>
+                 <td> 8:00 AM</td>
+               </tr>
+               <tr>
+                 <th class="tableheader" colspan="2">  Saturday, March 16 </th>
+               </tr>
+               <tr>
+                 <td> Softball vs. Ball St. (Louisville, Ky.) </td>
+                 <td> 3:00PM </td>
+               </tr>
+               <tr>
+                 <td> Men's Basketball vs. ACC Semifinal (Greensboro, N.C.)  </td>
+                 <td> 3:30PM </td>
+               </tr>
+             </table>
+           </div>
+
+
+         </div>
+
+         <div class="col-md-4 col-sm-3">
+          <h2> Go Heels TV </h2>
+          <div class="thumbnail">
+           <%= link_to image_tag("video.jpg", :alt => "Go Heel TV"), {:class => "img-responsive", :alt => "Go Heel TV"} %>
+           <div class="caption">
+            <h4>Watch Live and Enjoy</h4>
+            <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo.</p>
+            <p><a href="#" class="btn btn-primary" role="button">Launch Player</a></p>
+          </div>
+        </div>
+        </div>
+
+
+        </div>
+        </div>
+
+
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-md-4">
+              <div class="thumbnail">
+              <h3> Featured </h3>
+              <%= link_to image_tag("deansmith.jpg", :alt => "Dean's Smith"), {:class => "img-responsive", :alt => "Dean's Smith"} %>
+              <div class="thumbnail">
+               <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
+              
+            </div>
+               <p><a href="#" class="btn btn-primary" role="button">View Details</a></p>
+             </div>
+
+            </div>
+            <div class="col-md-4">
+               <div class="thumbnail">
+              <h3> Online Store </h3>
+              <%= link_to image_tag("merchandise.jpg", :alt => "Merchandise"), {:class => "img-responsive", :alt => "Merchandise"} %>
+              <div class="thumbnail">
+               <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
+             
+            </div>
+              <p><a href="#" class="btn btn-primary" role="button">View Details</a></p>
+            </div>
+
+            </div>
+            <div class="col-md-4">
+               <div class="thumbnail">
+              <h3> Articles </h3>
+              <%= link_to image_tag("featuredwriter.jpg", :alt => "Featured Writer"), {:class => "img-responsive", :alt => "Featured Writer"} %>
+              <div class="thumbnail">
+              <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
+            </div>
+              <p><a href="#" class="btn btn-primary" role="button">View Details</a></p>
+            </div>
+
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-4">
+               <div class="thumbnail">
+              <h3> Spotlight </h3>
+              <%= link_to image_tag("performerofweek.jpg", :alt => "Performer of the Week"), {:class => "img-responsive", :alt => "Performer of the Week"} %>
+            <div class="thumbnail">
+            <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
+          </div>
+            <p><a href="#" class="btn btn-primary" role="button">View Details</a></p>
+          </div>
+
+            </div>
+            <div class="col-md-4">
+               <div class="thumbnail">
+              <h3> Photo Galleries </h3>
+              <%= link_to image_tag("tennis1.jpg", :alt => "Tennis"), {:class => "img-responsive", :alt => "Go Heel TV"} %>
+             <div class="thumbnail">
+              <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
+            </div>
+              <p><a href="#" class="btn btn-primary" role="button">View Details</a></p>
+            </div>
+
+            </div>
+            <div class="col-md-4">
+              <div class="thumbnail">
+              <h3> Facilities </h3>
+              <%= link_to image_tag("kenanstadium.jpg", :alt => "Kenan Stadium"), {:class => "img-responsive", :alt => "Go Heel TV"} %>
+              <div class="thumbnail">
+              <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
+            </div>
+              <p><a href="#" class="btn btn-primary" role="button">View Details</a></p>
+            </div>
+
+            </div>
+          </div>
+        </div>
+
+

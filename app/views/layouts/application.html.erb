@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>UNC Athletics</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= stylesheet_link_tag    'custom', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+  <nav class="navbar navbar-default" role="navigation">
+    <div class="container-fluid">
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+
+        <a class="navbar-brand" href="#">UNC Athletics</a>
+
+      </div>
+
+      <!-- Collect the nav links, forms, and other content for toggling -->
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav">
+          <li><a href="#">Schedule</a></li> 
+          <li><a href="#">Tickets</a></li> 
+          <li><a href="#">Fan Center</a></li> 
+          <li><a href="#">UNC.edu</a></li> 
+        </ul>
+
+        <form class="navbar-form navbar-right" role="search">
+          <div class="form-group">
+            <input type="text" class="form-control" placeholder="Go Heels">
+          </div>
+          <button type="submit" class="btn btn-default">Submit</button>
+
+        </form>
+
+      </div><!-- /.navbar-collapse -->
+    </div><!-- /.container-fluid -->
+  </nav>
+
+  <div class="container-fluid">
+    <div class="row">
+
+
+     <div class="col-md-4">
+      <ol class="breadcrumb">
+        <li><a href="#">Home</a></li>
+      </ol>
+    </div>
+
+    <div class="col-md-4 col-md-offset-4">
+     <ul class ="list-inline">
+      <li> <%= link_to image_tag("facebook.png", :alt => "facebook"), {:class => "img-responsive", :alt => "facebook"} %></li>
+      <li> <%= link_to image_tag("twitter.png", :alt => "twitter"), {:class => "img-responsive", :alt => "twitter"} %></li      <li> <%= link_to image_tag("youtube.png", :alt => "youtube"), {:class => "img-responsive", :alt => "youtube"} %></li>
+      <li> <%= link_to image_tag("tumblr.png", :alt => "tumblr"), {:class => "img-responsive", :alt => "tumblr"} %></li>
+      <li> <%= link_to image_tag("instagram.png", :alt => "instagram"), {:class => "img-responsive", :alt => "instagram"} %></li>
+      <li> <%= link_to image_tag("pinterest.png", :alt => "pinterest"), {:class => "img-responsive", :alt => "pinterest"} %></li>
+    </ul>
+  </div>
+</div>
+
+</div>
+
+<div class="container-fluid">
+  <div class="row">
+
+    <div class="col-md-2 col-sm-4">
+      <ul class="list-group">
+        <h2 class="sports">  <%= link_to image_tag("logo.png", :alt => "UNC Logo"), {:class => "img-responsive", :alt => "UNC Logo"} %> Sports </h2>
+        <li class="list-group-item"><a href="#">Baseball</a></li>
+        <li class="list-group-item"><a href="#">Basketball (M)</a></li>
+        <li class="list-group-item"><a href="#">Basketball (F)</a> </li>
+        <li class="list-group-item"><a href="#">Cross Country (M)</a> </li>
+        <li class="list-group-item"><a href="#">Cross Country (F)</a></li>
+        <li class="list-group-item"><a href="#">Fencing (M)</a></li>
+        <li class="list-group-item"><a href="#">Fencing (F)</a></li>
+        <li class="list-group-item"><a href="#">Field Hockey </a></li>
+        <li class="list-group-item"><a href="#">Football </a></li>
+        <li class="list-group-item"><a href="#">Golf (M) </a></li>
+       
+      </ul>
+    </div>
+
+        <%=yield %>
+
+
+</div> <!-- for row -->
+
+
+ 
+<div class="container-fluid">
+     <hr>
+      <footer>
+        <p>&copy; University of North Carolina at Chapel Hill 2013</p>
+        <p> <a href="#">Contact Us</a>  |  <a href="#">Email Updates </a> | <a href="#"> Site Map</a>  | <a href="#"> Directions & Maps </p> </a>
+       
+       
+
+          <div class="row">
+            <div class="col-md-4">
+       
+             <h5> Info </h5>
+                <a href="#">Camps</a><br>
+                <a href="#">Tickets</a><br>
+                <a href="#">Seating Charts</a><br>
+                <a href="#">UNC Online Store</a><br>
+                <a href="#">UNC Auction</a><br>
+                <a href="#">Cheerleaders</a><br>
+                <a href="#">Academic Support</a><br>
+                <a href="#">Mobile</a><br>
+            </div>
+             
+         
+            <div class="col-md-4">
+              <h5> Media </h5>
+                <a href="#">GoHeels TV</a><br>
+                <a href="#">Photo Galleries</a><br>
+                <a href="#">News Feeds (RSS)</a><br>
+                <a href="#">Facebook</a><br>
+                <a href="#">Flickr</a><br>
+                <a href="#">Twitter</a><br>
+                <a href="#">You Tube</a><br>
+            </div>
+           
+            <div class="col-md-4">
+              <h5> Sponsors </h5>
+                <a href="#">University of North Caroina</a><br>
+                <a href="#">ACC</a><br>
+                <a href="#">Nike</a><br>
+                <a href="#">Learfield Sports</a><br>
+                <a href="#">Carolina Kids Club</a><br>
+                <a href="#">NeuLion</a><br>
+               
+            </div>
+           
+       
+            </div>
+</div>
+ </footer>
+</div> 
+
+
+
+
+
+
+</div>
+
+
+
+
+
+
+
+</body>
+</html>
