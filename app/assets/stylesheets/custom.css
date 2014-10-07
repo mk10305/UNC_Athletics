@@ -13,6 +13,7 @@ body {
   background-color: #fffcfc;
   background-image: url("http://www.transparenttextures.com/patterns/crissxcross.png");
   /* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
+
 }
 
 .extramargin {
@@ -77,6 +78,9 @@ h3, h2, h1{
   background-color:#0d1024;
 }
 
+.navbar {
+  background-color: #0d1024;
+}
 
 
 .navbar-inner {
@@ -89,7 +93,7 @@ filter: none;
 
 
 .navbar-default {
-   background-image: url('/assets/carolinafever.jpg');
+  background-image: url('/assets/carolinafever.jpg');
    background-size: 100%;
    background-repeat: no-repeat;
    box-shadow: none;
@@ -101,7 +105,7 @@ filter: none;
 
 .navbar-nav li a, .navbar-brand {
   color: white !important;
-  background-color: rgba(0,0,0,0.6)
+background-color: rgba(0,0,0,0.4)
 }
 
 
