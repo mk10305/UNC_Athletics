@@ -11,29 +11,36 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141001141854) do
+ActiveRecord::Schema.define(version: 20141010043713) do
 
-  create_table "bios", force: true do |t|
+  create_table "bios", id: false, force: true do |t|
+    t.integer "id"
     t.text    "personal_info"
     t.text    "current_year"
     t.text    "more_info"
     t.integer "player_id"
   end
 
+  create_table "newsletters", force: true do |t|
+    t.string   "name"
+    t.string   "email"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "players", force: true do |t|
-    t.string  "player_name"
-    t.string  "player_year"
-    t.string  "player_hometown"
+    t.string  "player_name",     limit: nil
+    t.string  "player_year",     limit: nil
+    t.string  "player_hometown", limit: nil
     t.text    "player_pic"
     t.integer "team_id"
   end
 
   create_table "teams", force: true do |t|
-    t.string "team_name"
-    t.string "gender"
-    t.string "coach"
-    t.string "assistant_coach"
-    t.string "student_coach"
+    t.string "team_name",       limit: nil
+    t.string "gender",          limit: nil
+    t.string "coach",           limit: nil
+    t.string "assistant_coach", limit: nil
     t.text   "team_pic"
   end
 

@@ -7,9 +7,18 @@ class Player < ActiveRecord::Base
 #what if i want a msg to show up that no search results
 #what if i want to hide search results after viewing them. 
 #adding class to form, etc
-def self.search(query)
-  where("player_name like ?", "%#{query}%")
+
+
+
+=begin
+def self.search(search)
+  if search
+   where("player_name LIKE ?", "%#{search}%")
+  else
+  all
+  end
 end
+=end
 
 
 
