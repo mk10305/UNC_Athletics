@@ -8,12 +8,18 @@
        <li><a href="#">Video</a></li>
        <li><a href="#">Photography</a></li>
      </ul>
+
+
+     
    </div>
 
    <div class="col-md-8 col-md-offset-1 extramargin">
 
+
   <%= image_tag "unc/#{@team.team_pic}" , :alt => "team_pic", :class => "img-responsive" %>
-  <p class="lead text-center"> UNC <%= @team.team_name %> 2012-2013 </p>
+    <h3 class="text-center"> UNC <%= @team.team_name %> 2012-2013 </h3>
+
+
    
    </div>
 
@@ -33,7 +39,7 @@
 
    <% @players.each do |player| %>
        <tr>
-           <td><%= link_to player.player_name , player_path(player.id) %></td>
+           <td><%= link_to player.player_name , team_player_path(@team.id,player.id) %></td>
            <td><%= player.player_year%></td>
            <td><%= player.player_hometown%></td>
        </tr>

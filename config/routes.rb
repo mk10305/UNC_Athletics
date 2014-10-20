@@ -1,16 +1,18 @@
 Rails.application.routes.draw do
 
   post 'home/create' => 'home#create'
+  post '/create', :to=> "home#create"
   get 'home/index'
 
   get "home/search"
 
 
 
-resources :teams,:except=>[:index]
+resources :teams,:except=>[:index] do
+  resources :players
+end
 
 
-get "teams/:team_id/players/:player_id", :to =>  "players#show"
 
 resources :players
 

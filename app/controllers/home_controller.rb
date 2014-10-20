@@ -1,6 +1,5 @@
 class HomeController < ApplicationController
 
-before_action :set_parameters
   
 
 def index
@@ -9,15 +8,34 @@ end
    
 
   def search
-      @players = Player.where("player_name like '%#{params[:search]}%' or player_hometown like '%#{params[:search]}%'")
+
+    respond_to do |format|
+format.js{ 
+  @players = Player.where("lower(#{params[:player_fields]}) like lower('%#{params[:name]}%') ")
+}
+      
       
   end
+end
 
   def create
     @newsletter = Newsletter.new(get_params)
-    @newsletter.save
-    redirect_to root_url
-   
+    respond_to do |format|
+    if @newsletter.save
+      format.html{
+      flash[:notice]= "Thanks! You are now registered to the GoHeels.com E-Newsletter!"
+      redirect_to root_url
+    }
+    else 
+    format.html{
+       flash.now[:error]="Uh-Oh! There was an error in signing you up for the GoHeels.com E-Newsletter"     
+       render :index
+     }
+  end
+end
+
+
+
   end
 
 
@@ -26,9 +44,7 @@ end
     params.require(:newsletter).permit(:name, :email)
   end
 
-  def set_parameters
-    @newsletter = Newsletter.new
-  end
+  
 
 
 

@@ -40,151 +40,220 @@
 
 
           <div class="navbar-form navbar-right" role="search">
-            <div class="form-group">
-
-             <%= form_tag("/home/search", method:"get") do %>
-             <%= text_field_tag(:search, "search for players by name, hometown, or year") %>
-             <%= submit_tag "Search", :name => nil%>
-             <% end %>
 
 
 
 
-           </div><!-- /.navbar-collapse -->
-         </div><!-- /.container-fluid -->
-       </nav>
+              <%= form_tag '/home/search', method: "get" ,:remote=> true ,:class=> 'form-group' do %>
+              <div class="form-group">
+
+                <%= text_field_tag :name, '',placeholder: 'Search for Players', :class=>'form-control' %>
+              </div>
+         
+              <% 
+                  # Here we are going to select all field from our table Player and reject the unwanted fields
+
+                  player_columns = Player.column_names
+
+                  # the unwanted fields
+                  unwanted_fields=['id', 'team_id', 'player_pic']
+
+                  # delete the unwanted fields from PLayer.column_names => reject! method is the opposite os select! method and the include means that if an attribute exit in the table
+                  player_columns.reject!{|column| unwanted_fields.include?(column) }
+
+              %>
+              <%= select_tag :player_fields, options_for_select(player_columns.map{|column| [column.gsub('_',' '), column] }), {:class=>'form-control'} %>
+              
 
 
-       <div class="container-fluid">
-         <div class="row">
-          <div class="col-md-4">
-           <ol class="breadcrumb">
-             <li> <%= render_breadcrumbs%>
-             </li>
-           </ol>
-         </div>
-
-
-         <div class="col-md-4 col-md-offset-4">
-           <ul class ="list-inline">
-            <li> <%= link_to image_tag("facebook.png", :alt => "facebook"), {:class => "img-responsive", :alt => "facebook"} %></li>
-            <li> <%= link_to image_tag("twitter.png", :alt => "twitter"), {:class => "img-responsive", :alt => "twitter"} %></li      <li> <%= link_to image_tag("youtube.png", :alt => "youtube"), {:class => "img-responsive", :alt => "youtube"} %></li>
-            <li> <%= link_to image_tag("tumblr.png", :alt => "tumblr"), {:class => "img-responsive", :alt => "tumblr"} %></li>
-            <li> <%= link_to image_tag("instagram.png", :alt => "instagram"), {:class => "img-responsive", :alt => "instagram"} %></li>
-            <li> <%= link_to image_tag("pinterest.png", :alt => "pinterest"), {:class => "img-responsive", :alt => "pinterest"} %></li>
-          </ul>
-        </div>
-      </div>
-
-    </div>
-
-    <div class="container-fluid">
-      <div class="row">
-
-        <div class="col-md-2">
-          <ul class="list-group">
-            <h2 class="sports">  <%= link_to image_tag("logo.png", :alt => "UNC Logo"), {:class => "img-responsive", :alt => "UNC Logo"} %> Sports </h2>
-
-            <% @teams.each do |team | %>
-
-
-            <li class="list-group-item">
-              <%= link_to team.team_name, team_path(team.id) %> <%=(team.gender) %>
-            </li>
-
-
+              <%= submit_tag "Search", :name => nil, :class => 'btn btn-primary'%>
+            </form>
 
             <% end %>
 
-          </ul>
-        </div>
-        <style>
-        .list-group-item a:hover
-        {
-
-          background-color: blue;
-        }
-        </style>
 
 
 
 
 
 
+</div><!-- /.container-fluid -->
+</nav>
+
+
+<div class="container-fluid">
+ <div class="row">
+  <div class="col-md-4">
+   <ol class="breadcrumb">
+     <li> <%= render_breadcrumbs%>
+     </li>
+   </ol>
+ </div>
+
+
+ <div class="col-md-4 col-md-offset-4">
+
+  <ul class ="list-inline">
+    <li> <%= link_to image_tag("facebook.png", :alt => "facebook"), {:class => "img-responsive", :alt => "facebook"} %></li>
+    <li> <%= link_to image_tag("twitter.png", :alt => "twitter"), {:class => "img-responsive", :alt => "twitter"} %></li      <li> <%= link_to image_tag("youtube.png", :alt => "youtube"), {:class => "img-responsive", :alt => "youtube"} %></li>
+    <li> <%= link_to image_tag("tumblr.png", :alt => "tumblr"), {:class => "img-responsive", :alt => "tumblr"} %></li>
+    <li> <%= link_to image_tag("instagram.png", :alt => "instagram"), {:class => "img-responsive", :alt => "instagram"} %></li>
+    <li> <%= link_to image_tag("pinterest.png", :alt => "pinterest"), {:class => "img-responsive", :alt => "pinterest"} %></li>
+  </ul>
+
+</br>
 
 
 
 
 
-        <%=yield %>
-
-
-      </div> <!-- for row -->
 
 
 
-      <div class="container-fluid">
-       <hr>
-       <footer>
-        <p>&copy; University of North Carolina at Chapel Hill 2013</p>
-        <p> <a href="#">Contact Us</a>  |  <a href="#">Email Updates </a> | <a href="#"> Site Map</a>  | <a href="#"> Directions & Maps </p> </a>
+</div><!-- /.navbar-collapse -->
 
 
 
-        <div class="row">
-          <div class="col-md-4">
+</div>
+</div>
 
-           <h5> Info </h5>
-           <a href="#">Camps</a><br>
-           <a href="#">Tickets</a><br>
-           <a href="#">Seating Charts</a><br>
-           <a href="#">UNC Online Store</a><br>
-           <a href="#">UNC Auction</a><br>
-           <a href="#">Cheerleaders</a><br>
-           <a href="#">Academic Support</a><br>
-           <a href="#">Mobile</a><br>
-         </div>
+</div>
 
+<div class="container-fluid">
+  <div class="row">
 
-         <div class="col-md-4">
-          <h5> Sponsors </h5>
-          <a href="#">University of North Caroina</a><br>
-          <a href="#">ACC</a><br>
-          <a href="#">Nike</a><br>
-          <a href="#">Learfield Sports</a><br>
-          <a href="#">Carolina Kids Club</a><br>
-          <a href="#">NeuLion</a><br>
-
-        </div>
-
-        <div class="col-md-4">
-     <h5> Sign-Up for Newsletter </h5>
-
-  <!--    Didn't work for home/create? does the action always have to be to a different page?
-     what if we want a message to display? 
-     And this form is going to be on all pages?
-     rest of application doesn't work then. Do we move all this to application controller? If so how do we handle actions
- -->
-     <%= form_for @newsletter, url: {action: "create"} do |f| %>
-
-     <p> <b>Name</b> <br /> <%= f.text_field :name%></p>
-
-     <p> <b>Email </b> <br /> <%= f.text_field :email %></p>
-
-     <p><%= f.submit "Create" %> </p>
-
-
-     <% end %>
+    <div class="col-md-2">
+      <ul class="list-group">
+        <h2 class="sports">  <%= link_to image_tag("logo.png", :alt => "UNC Logo"), {:class => "img-responsive", :alt => "UNC Logo"} %> Sports </h2>
 
 
 
+        <% @teams.each do |team | %>
 
-       </div>
+        <% if @team and @team.id == team.id%>
+        <li class="list-group-item active">
+         <a href="/teams/<%= team.id %>"><%=team.gender %> <%=team.team_name%></a>
+       </li>
+
+       <% else %>
+       <li class="list-group-item">
+         <a class="" href="/teams/<%= team.id %>"><%=team.gender %> <%=team.team_name%></a>
+       </li>
+
+       <%end%>
 
 
-     </div>
+       <%end%>
+
+     </ul>
    </div>
- </footer>
+
+   <div class="col-md-10">
+
+
+     <% if flash[:notice] || flash[:error]%>
+
+     <% if flash[:notice] %>
+
+     <div class="alert alert-success" role="alert">
+
+      <%= flash[:notice] %> 
+
+    </div>
+
+    <% else %> 
+    <div class="alert alert-danger" role="alert">
+
+      <%= flash[:error] %> 
+
+      <% if @newsletter.errors.any? %>
+      <h5> Please fix the following errors: </h5>
+      <ul>
+        <% @newsletter.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+        <% end %>
+      </ul>
+
+      <%end %>
+
+    </div>
+
+    <%end %>
+    <%end %>
+  </div>
+
+
+<div id="content">
+
+  <%=yield %>
+
+</div>
+
+
+</div> <!-- for row -->
+
+
+
+
+<div class="container-fluid">
+ <hr>
+ <footer>
+  <p>&copy; University of North Carolina at Chapel Hill 2013</p>
+  <p> <a href="#">Contact Us</a>  |  <a href="#">Email Updates </a> | <a href="#"> Site Map</a>  | <a href="#"> Directions & Maps </p> </a>
+
+
+
+  <div class="row">
+    <div class="col-md-4">
+
+     <h5> Info </h5>
+     <a href="#">Camps</a><br>
+     <a href="#">Tickets</a><br>
+     <a href="#">Seating Charts</a><br>
+     <a href="#">UNC Online Store</a><br>
+     <a href="#">UNC Auction</a><br>
+     <a href="#">Cheerleaders</a><br>
+     <a href="#">Academic Support</a><br>
+     <a href="#">Mobile</a><br>
+   </div>
+
+
+   <div class="col-md-4">
+    <h5> Sponsors </h5>
+    <a href="#">University of North Caroina</a><br>
+    <a href="#">ACC</a><br>
+    <a href="#">Nike</a><br>
+    <a href="#">Learfield Sports</a><br>
+    <a href="#">Carolina Kids Club</a><br>
+    <a href="#">NeuLion</a><br>
+
+  </div>
+
+  <div class="col-md-4">
+   <h5> Sign-Up for the GoHeels.com E-Newsletter </h5>
+
+
+   <%= form_for @newsletter, url: create_path, method: 'post' do |f| %>
+
+
+   <p> <b>Name</b> <br /> <%= f.text_field :name%></p>
+
+   <p> <b>Email </b> <br /> <%= f.text_field :email %></p>
+
+   <p><%= f.submit "Submit" %> </p>
+
+
+   <% end %>
+
+
+
+
+ </div>
+
+
+</div>
+</div>
+</footer>
 </div> 
 
 
@@ -194,11 +263,13 @@
 
 </div>
 
+<script>
+$(document).ready(function(){
 
-
-
-
-
+  //name= $("#name").val();
+//$.getScript("/home/search.js?player_fields=player_hometown&name="+name);
+  })
+</script
 
 </body>
 </html>

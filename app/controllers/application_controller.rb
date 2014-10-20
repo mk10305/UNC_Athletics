@@ -1,6 +1,6 @@
 class ApplicationController < ActionController::Base
 
-  before_action :set_parameters
+  before_action :set_parameters, :except=>[:create]
 
 
   # Prevent CSRF attacks by raising an exception.
@@ -10,18 +10,16 @@ class ApplicationController < ActionController::Base
 
   private
   def get_all_teams
-     add_breadcrumb "Home", :root_path
-    @teams = Team.all.sort do |a,b|
+   add_breadcrumb "Home", :root_path
+   @teams = Team.all.sort do |a,b|
      a.team_name<=>b.team_name
+   end
+end
 
-    end
 
-      def set_parameters
+ def set_parameters
     @newsletter = Newsletter.new
   end
 
-  end
 
-
-  
 end
